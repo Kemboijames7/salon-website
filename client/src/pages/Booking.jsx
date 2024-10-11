@@ -33,8 +33,7 @@ const handleSubmit = async(e) => {
     e.preventDefault()
     const response = await fetch('http://localhost:5000/api/bookings', {
     method: 'POST',
-    headers: {'Content-Type':'application/json',
-    },
+    headers: {'Content-Type':'application/json',},
     body:JSON.stringify({name,email,date,service, stylist})
 })
 
@@ -64,6 +63,7 @@ return (
         <label htmlFor="email">Email</label>
         <input type="text"
          id='email'
+          placeholder='enter Id'
            value={email}
         onChange={(e) => setEmail(e.target.value)} 
         required 
@@ -78,7 +78,7 @@ return (
             required
         />
 
-        <p>Selected Date: {date.toLocaleDateString()}</p>
+        <p>Selected Date: {date.toDateString()}</p>
         </div>
         <div>
         <label htmlFor="service">Service:</label>

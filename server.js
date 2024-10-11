@@ -8,7 +8,9 @@ app.use(cors());
 app.use(express.json());
 
 
-mongoose.connect(MONGODB_PASSWORD).then(() => {
+mongoose.connect(
+   `mongodb+srv://kemich:${process.env.MONGODB_PASSWORD}@cluster0.5u4cmkt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+).then(() => {
     console.log('Connected to MongoDB');
   }).catch((error) => {
     console.error('Error connecting to MongoDB:', error);

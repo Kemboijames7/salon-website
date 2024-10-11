@@ -20,7 +20,7 @@ return (
         <ul>
             {bookings.map((booking) => (
                 <li key={booking._id}>
-{booking.name} - {booking.email} - {new Date(booking.date).toLocaleDateString()} - {booking.service} - {booking.stylist}
+{booking.name} - {booking.email} - {new Date(booking.date).toDateString()} - {booking.service} - {booking.stylist}
                 </li>
             ))}
         </ul>
