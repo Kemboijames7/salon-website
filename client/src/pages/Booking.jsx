@@ -40,11 +40,24 @@ const handleSubmit = async(e) => {
    //Tell the customer the booking was successful and redirect them back home.
    if (response.ok) {
     alert(`Booking for ${name} on ${date.toLocaleDateString()} was successful. We will send an email to ${email} with available times.`);
+    await sendAvailableTimes(email); // Call to send available times
     navigate('/');
   } else {
     alert('Booking failed. Please try again.');
   }
 }
+
+const sendAvailableTimes = async (email) => {
+  const availableTimes = ['9:00 AM', '10:00 AM', '11:00 AM'];
+
+  const message = `Hello ${name},\n\nThank you for your booking! Here are the available times:\n${availableTimes.join(', ')}\n\nBest regards,\nYour Salon Team`;
+
+  console.log(`Sending email to ${email}:\n${message}`);
+
+  alert(`An email has been sent to ${email} with available times.`);
+};
+
+
 return (
     <div>
       <h2> Book an Appointment </h2>
