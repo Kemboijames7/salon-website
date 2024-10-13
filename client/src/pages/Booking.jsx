@@ -8,7 +8,8 @@ const services = [
     'Hair Coloring',
     'Deep Conditioning',
     'Bridal Styling',
-    'Event Styling'
+    'Event Styling',
+    'Treatments'
 ];
 
 const stylists = [
