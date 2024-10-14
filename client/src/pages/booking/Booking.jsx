@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import  Calendar from 'react-calendar'
 import { useNavigate } from 'react-router-dom';
+import styles from './booking.module.css'
 
 
 const services = [
@@ -61,10 +62,11 @@ const sendAvailableTimes = async (email) => {
 
 return (
     <div>
+      
       <h2> Book an Appointment </h2>
       <form onSubmit={handleSubmit}>
         <div>
-        <label htmlFor="name"></label>
+        <label htmlFor="name">Name:</label>
         <input type="text"
          id='name'
           placeholder='enter name'
@@ -74,7 +76,7 @@ return (
         />
         </div>
         <div>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Email:</label>
         <input type="text"
          id='email'
           placeholder='enter Id'
@@ -85,7 +87,7 @@ return (
         </div>
         <div>
         {/*Calender comp goes here */}
-        <label >Date</label>
+        <label >Date:</label>
         <Calendar 
             onChange={setDate}
             value={date}

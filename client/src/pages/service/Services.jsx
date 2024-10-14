@@ -28,6 +28,7 @@ const ServiceCard = ({ service }) => {
       <p className="service-description">{service.description}</p>
       <p className="service-details">
         <span className="service-price">${service.price}</span>
+        <br />
         <span className="service-duration">{service.duration}</span>
       </p>
     </div>
