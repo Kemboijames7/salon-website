@@ -72,7 +72,7 @@ button:hover {
 
 .cta {
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: #f3aeae;
     padding: 40px;
     border-radius: 8px;
   }
@@ -80,7 +80,7 @@ button:hover {
   .cta-button {
     padding: 10px 20px;
     font-size: 1.1rem;
-    background-color: #4a90e2;
+    background-color: #9cc2f0;
     color: white;
     border: none;
     border-radius: 5px;

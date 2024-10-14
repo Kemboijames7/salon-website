@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './home.module.css'
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 return (
@@ -25,9 +26,9 @@ return (
       </section>
 
       <section className="cta">
-        <h2>Ready for a New Look?</h2>
-        <button className="cta-button">Book an Appointment</button>
-      </section>
+    <h2>Ready for a New Look?</h2>
+    <Link to="Booking" className="cta-button">Book an Appointment</Link>
+</section>
 
       <section className="testimonials">
         <h2>What Our Clients Say</h2>
