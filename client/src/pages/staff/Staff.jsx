@@ -5,29 +5,31 @@ import './staff.module.css';
 const staffMembers = [
   {
     id: 1,
-    name: "Emma Johnson",
+    name: "Bettie Johnson",
     role: "Senior Stylist",
     specialty: "Color Specialist",
     bio: "With over 10 years of experience, Emma is known for her innovative coloring techniques and attention to detail.",
-    imageUrl: "/api/placeholder/150/150" // Replace with actual image path
+    imageUrl: "/api/placeholder/150/150" 
   },
+
   {
     id: 2,
-    name: "Michael Chen",
+    name: "James Chen",
     role: "Master Barber",
     specialty: "Men's Cuts & Styling",
     bio: "Michael's precision cuts and modern styling have made him a favorite among our male clientele.",
-    imageUrl: "/api/placeholder/150/150" // Replace with actual image path
+    imageUrl: "/api/placeholder/150/150" 
   },
+
   {
     id: 3,
-    name: "Sophia Rodriguez",
+    name: "Naomi Rodriguez",
     role: "Stylist",
     specialty: "Bridal & Special Occasion",
     bio: "Sophia's creative updos and elegant styles are perfect for weddings and special events.",
-    imageUrl: "/api/placeholder/150/150" // Replace with actual image path
+    imageUrl: "/api/placeholder/150/150" 
   },
-  // Add more staff members as needed
+  
 ];
 
 const StaffMember = ({ member }) => (
