@@ -9,7 +9,7 @@ const staffMembers = [
     role: "Senior Stylist",
     specialty: "Color Specialist",
     bio: "With over 10 years of experience, Emma is known for her innovative coloring techniques and attention to detail.",
-    imageUrl: "/api/placeholder/150/150" 
+    imageUrl: "/images/bettie.png" 
   },
 
   {
@@ -18,7 +18,7 @@ const staffMembers = [
     role: "Master Barber",
     specialty: "Men's Cuts & Styling",
     bio: "Michael's precision cuts and modern styling have made him a favorite among our male clientele.",
-    imageUrl: "/api/placeholder/150/150" 
+    imageUrl: "/images/james.png" 
   },
 
   {
@@ -27,7 +27,7 @@ const staffMembers = [
     role: "Stylist",
     specialty: "Bridal & Special Occasion",
     bio: "Sophia's creative updos and elegant styles are perfect for weddings and special events.",
-    imageUrl: "/api/placeholder/150/150" 
+    imageUrl: "/images/naomi.png" 
   },
   
 ];
