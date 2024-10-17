@@ -67,6 +67,12 @@ button:focus-visible {
   }
 } */
 
+nav {
+list-style: none;
+background-color: black;
+font-weight: 400;
+}
+
 footer {
   background-color: rgb(211, 165, 109);
 }
