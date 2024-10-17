@@ -15,7 +15,7 @@
   .staff-intro {
     text-align: center;
     font-size: 1.1rem;
-    color: #666;
+    color: #100808;
     max-width: 800px;
     margin: 0 auto 40px;
     line-height: 1.6;
@@ -56,19 +56,19 @@
   
   .staff-role {
     font-size: 1.1rem;
-    color: #4a90e2;
+    color: #583c07;
     margin-bottom: 5px;
   }
   
   .staff-specialty {
     font-size: 1rem;
-    color: #666;
+    color: #000;
     margin-bottom: 10px;
   }
   
   .staff-bio {
     font-size: 0.9rem;
-    color: #555;
+    color: #000;
     line-height: 1.5;
   }
   

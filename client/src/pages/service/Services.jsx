@@ -10,7 +10,7 @@ const serviceCategories = [
   { id: 'treatments', name: 'Treatments' },
 ];
 
-const services = [
+const servicesMenu = [
   { id: 1, name: 'Women\'s Haircut', price: 50, category: 'haircuts', description: 'Professional haircut tailored to your style.', duration: '60 min' },
   { id: 2, name: 'Men\'s Haircut', price: 30, category: 'haircuts', description: 'Stylish cut for the modern man.', duration: '30 min' },
   { id: 3, name: 'Full Color', price: 80, category: 'coloring', description: 'Complete hair coloring service.', duration: '120 min' },
@@ -21,32 +21,33 @@ const services = [
   { id: 8, name: 'Keratin Treatment', price: 150, category: 'treatments', description: 'Smoothing keratin treatment for frizz-free hair.', duration: '150 min' },
 ];
 
-const ServiceCard = ({ service }) => {
+const ServiceCard = ({ serviceMenu }) => {
   return (
-    <div className="service-card">
-      <h3 className="service-name">{service.name}</h3>
-      <p className="service-description">{service.description}</p>
-      <p className="service-details">
-        <span className="service-price">${service.price}</span>
+    <div className={styles['service-card']}>
+      <h3 className={styles['service-name']}>{serviceMenu.name}</h3>
+      <p className={styles['service-description']}>{serviceMenu.description}</p>
+      <p className={styles['service-details']}>
+        <span className={styles['service-price']}>${serviceMenu.price}</span>
         <br />
-        <span className="service-duration">{service.duration}</span>
+        <span className={styles['service-duration']}>{serviceMenu.duration}</span>
       </p>
     </div>
+   
   );
 };
 
-const ServicesPage = () => {
+const Services = () => {
   const [activeCategory, setActiveCategory] = useState(serviceCategories[0].id);
 
   return (
-    <div className="services-container">
-      <h1 className="services-title">Our Services</h1>
+    <div className={styles['services-container']}>
+      <h1 className={styles['services-title']}>Our Services</h1>
       
-      <div className="category-tabs">
+      <div className={styles['category-tabs']}>
         {serviceCategories.map((category) => (
           <button 
             key={category.id}
-            className={`category-tab ${activeCategory === category.id ? 'active' : ''}`}
+            className={`${styles['category-tab']} ${activeCategory === category.id ? 'active' : ''}`}
             onClick={() => setActiveCategory(category.id)}
           >
             {category.name}
@@ -55,14 +56,14 @@ const ServicesPage = () => {
       </div>
       
       <div className="services-grid">
-        {services
-          .filter((service) => service.category === activeCategory)
-          .map((service) => (
-            <ServiceCard key={service.id} service={service} />
+        {servicesMenu
+          .filter((serviceMenu) => serviceMenu.category === activeCategory)
+          .map((serviceMenu) => (
+            <ServiceCard key={serviceMenu.id} serviceMenu={serviceMenu} />
           ))}
       </div>
     </div>
   );
 };
 
-export default ServicesPage;
+export default Services;

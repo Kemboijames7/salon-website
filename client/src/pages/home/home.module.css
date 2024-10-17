@@ -1,4 +1,5 @@
 .home-container {
+  /* background-image: url(/images/Qwinnis.png); */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -7,14 +8,24 @@
   
   .hero {
     text-align: center;
-    padding: 60px 0;
-    background-color: #f8f8f8;
-    margin-bottom: 40px;
+    padding: 60px ;
+    background-color: #f8f9fa;
+   
   }
+
+  .salon-image {
+    width: 100%;  
+    max-width: 800px; 
+    height: auto;  
+    border-radius: 10px;  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  
+    margin-top: 20px;  
+}
   
   .hero h1 {
     font-size: 2.5rem;
-    color: #333;
+    color: #000;
+    font-weight: 400;
     margin-bottom: 10px;
   }
   
@@ -38,7 +49,11 @@
     line-height: 1.6;
     color: #555;
   }
-  
+
+  .about-us {
+    margin: 20px 0;
+}
+
   .featured-services ul {
     list-style-type: none;
     padding: 0;
@@ -61,7 +76,7 @@
     padding: 10px 20px;
     font-size: 1.1rem;
     background-color: #4a90e2;
-    color: white;
+    color: #1d4f5f;
     border: none;
     border-radius: 5px;
     cursor: pointer;

@@ -21,6 +21,19 @@ function App() {
     <main>
       <Outlet/>
     </main>
+
+    {/* <footer>
+      <div>
+      
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+       
+      </div>
+    </footer> */}
    </div>
   )
 }
