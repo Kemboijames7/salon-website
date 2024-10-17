@@ -39,10 +39,7 @@ const Home = () => {
                 - Sarah J.
             </section>
 
-            <footer className={styles.footer}>
-                <p>Visit us at: 123 Style Street, Fashion City</p>
-                <p>Contact: (555) 123-4567 | info@qwinnissalon.com</p>
-            </footer>
+          
         </div>
     );
 };

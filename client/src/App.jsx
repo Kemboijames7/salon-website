@@ -22,18 +22,15 @@ function App() {
       <Outlet/>
     </main>
 
-    {/* <footer>
-      <div>
+   
       
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
+      <footer>
+            <p>Contact: (555) 123-4567 | info@qwinnissalon.com</p>
+                <p>© 2024 Qwinnis Hair Salon. All rights reserved</p>
+             
+            </footer>
        
-      </div>
-    </footer> */}
+     
    </div>
   )
 }
