@@ -69,8 +69,16 @@ button:focus-visible {
 
 nav {
 list-style: none;
-background-color: black;
+background-color: rgb(221, 196, 138);
 font-weight: 400;
+display:flex;
+justify-content: space-evenly;
+}
+
+nav a {
+  color: rgb(18, 2, 6);
+  font-weight: bold;
+
 }
 
 footer {
