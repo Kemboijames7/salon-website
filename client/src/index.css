@@ -83,4 +83,8 @@ nav a {
 
 footer {
   background-color: rgb(211, 165, 109);
+  position: fixed;
+  position: relative;
+  bottom:0;
+  
 }
