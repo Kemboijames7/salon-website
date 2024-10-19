@@ -61,73 +61,88 @@ const sendAvailableTimes = async (email) => {
 
 
 return (
-    <div>
-      
-      <h2> Book an Appointment </h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-        <label htmlFor="name">Name:</label>
-        <input type="text"
-         id='name'
-          placeholder='enter name'
-           value={name}
-        onChange={(e) => setName(e.target.value)} 
-        required 
-        />
-        </div>
-        <div>
-        <label htmlFor="email">Email:</label>
-        <input type="text"
-         id='email'
-          placeholder='enter Id'
-           value={email}
-        onChange={(e) => setEmail(e.target.value)} 
-        required 
-        />
-        </div>
-        <div>
-        {/*Calender comp goes here */}
-        <label >Date:</label>
-        <Calendar 
-            onChange={setDate}
-            value={date}
-            required
-        />
-
-        <p>Selected Date: {date.toDateString()}</p>
-        </div>
-        <div>
-        <label htmlFor="service">Service:</label>
-       <select 
-       id='service'
-        value={service}
-        onChange={(e) => setService(e.target.value)} 
-        required 
-        >
-            <option value=""disabled >Select a service </option>
-            {services.map((service, index) => (
-             <option key={index} value={service}>
-                {service}</option>
-             ))}
-        </select>
-        </div>
-        <div>
-        <label htmlFor="stylist">Stylists:</label>
-        <select  
-        id='stylist'
-        value={stylist}
-        onChange={(e) => setStylist(e.target.value)} 
-        required 
-        >
-        <option value=""disabled >Select a stylist (optional) </option>
-            {stylists.map((stylist, index) => (
-             <option key={index} value={stylist }>{stylist }</option>
-             ))}
-        </select>
-        </div>
-        <button type='submit' >Book</button>
-      </form>
+  <div className={styles.bookingContainer}>
+  <h2 className={styles.heading}>Book an Appointment</h2>
+  <form onSubmit={handleSubmit} className={styles.form}>
+    {/* Name input */}
+    <div className={styles.formGroup}>
+      <label htmlFor="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="Enter name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        required
+      />
     </div>
+    
+    {/* Email input */}
+    <div className={styles.formGroup}>
+      <label htmlFor="email">Email:</label>
+      <input
+        type="text"
+        id="email"
+        placeholder="Enter email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+    </div>
+    
+    {/* Calendar input */}
+    <div className={styles.formGroup}>
+      <label>Date:</label>
+      <Calendar onChange={setDate} value={date} required />
+      <p className={styles.selectedDate}>Selected Date: {date.toDateString()}</p>
+    </div>
+    
+    {/* Service selection */}
+    <div className={styles.formGroup}>
+      <label htmlFor="service">Service:</label>
+      <select
+        id="service"
+        value={service}
+        onChange={(e) => setService(e.target.value)}
+        required
+      >
+        <option value="" disabled>
+          Select a service
+        </option>
+        {services.map((service, index) => (
+          <option key={index} value={service}>
+            {service}
+          </option>
+        ))}
+      </select>
+    </div>
+    
+    {/* Stylist selection */}
+    <div className={styles.formGroup}>
+      <label htmlFor="stylist">Stylist:</label>
+      <select
+        id="stylist"
+        value={stylist}
+        onChange={(e) => setStylist(e.target.value)}
+        required
+      >
+        <option value="" disabled>
+          Select a stylist (optional)
+        </option>
+        {stylists.map((stylist, index) => (
+          <option key={index} value={stylist}>
+            {stylist}
+          </option>
+        ))}
+      </select>
+    </div>
+    
+    {/* Submit button */}
+    <button type="submit" className={styles.submitButton}>
+      Book
+    </button>
+  </form>
+</div>
 )}
 
 export default Booking

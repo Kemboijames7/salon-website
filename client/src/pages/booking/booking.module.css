@@ -40,7 +40,7 @@ select {
 
 input[type="text"]:focus,
 select:focus {
-    border-color: #007BFF; /* Change border color on focus */
+    border-color: #c1d247; /* Change border color on focus */
 }
 
 /* Calendar Styles */
@@ -51,7 +51,7 @@ select:focus {
 /* Button Styles */
 button {
     padding: 10px;
-    background-color: #007BFF; /* Bootstrap primary color */
+    background-color: #7d8690; /* Bootstrap primary color */
     color: white;
     border: none;
     border-radius: 4px;

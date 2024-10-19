@@ -72,13 +72,23 @@ list-style: none;
 background-color: rgb(221, 196, 138);
 font-weight: 400;
 display:flex;
+align-items: center;
 justify-content: space-evenly;
+height: 40px;
+border-radius: 5px;
 }
 
 nav a {
   color: rgb(18, 2, 6);
   font-weight: bold;
 
+}
+
+nav a:hover{
+  background-color: rgb(178, 170, 119);
+  border-radius: 6px;
+  padding: 5px;
+  transition: 1s;
 }
 
 footer {
