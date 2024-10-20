@@ -25,10 +25,9 @@ function App() {
    
       
       <footer>
-            <p>Contact: (555) 123-4567 | info@qwinnissalon.com</p>
-                <p>© 2024 Qwinnis Hair Salon. All rights reserved</p>
-             
-            </footer>
+  <p>Contact: (555) 123-4567 | info@qwinnissalon.com
+    © 2024 Qwinnis Hair Salon. All rights reserved</p>
+    </footer>
        
      
    </div>
