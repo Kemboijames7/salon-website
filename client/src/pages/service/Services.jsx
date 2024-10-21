@@ -4,7 +4,7 @@ import styles from './service.module.css'
 
 
 const serviceCategories = [
-  { id: 'haircuts', name: 'Haircuts' },
+  { id: 'haircuts', name: 'Haircuts'},
   { id: 'coloring', name: 'Coloring' },
   { id: 'styling', name: 'Styling' },
   { id: 'treatments', name: 'Treatments' },

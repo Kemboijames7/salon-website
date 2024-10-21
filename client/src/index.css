@@ -22,13 +22,13 @@ a {
   color: #535bf2;
 } */
 
-body {
+/* body {
   margin: auto;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
+} */
 
 h1 {
   font-size: 1.6em;
@@ -93,10 +93,7 @@ nav a:hover{
 
 footer {
 background-color: rgb(211, 165, 109);
-position: fixed;
-display: flex;
-justify-content: space-evenly;
-align-items: center;
-bottom:0;
+position: sticky;
+bottom: 0;
   
 }
