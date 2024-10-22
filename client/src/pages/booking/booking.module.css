@@ -51,16 +51,17 @@ select:focus {
 /* Button Styles */
 button {
     padding: 10px;
-    background-color: #7d8690; /* Bootstrap primary color */
+    background-color: #6697d0; /* Bootstrap primary color */
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    max-width: 350px;
 }
 
 button:hover {
-    background-color: #e8eaad; /* Darker shade on hover */
+    background-color: #95cae7; /* Darker shade on hover */
 }
 
 /* Optional Styles for Selected Date Display */
