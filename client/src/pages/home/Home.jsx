@@ -39,6 +39,24 @@ const Home = () => {
                 - Sarah J.
             </section>
 
+            <section>
+                <div class="text-align-center">
+                    <div class="header142_content">
+<h2 class="heading-style-h3">Celebrating</h2>
+
+                <div class="counter-text">
+                    <span counter-element="number" duration="3000" class="counter-text">12</span>
+               
+                <h2 class="heading-style-h3">Years </h2>
+                </div>
+                <div class="animation-text-wrap">
+                    <h2 class="heading-style-h3">with Dukes Barbers</h2>
+                    </div>
+                    </div>
+
+                  </div>
+            </section>
+
           
         </div>
     );
