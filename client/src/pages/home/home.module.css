@@ -95,6 +95,17 @@
     font-style: italic;
     margin-bottom: 10px;
   }
+
+  .counter-text {
+    color: #f4f4f4;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Oxygen, Fira Sans, Droid Sans, sans-serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
   
   .text-align-center {
     text-align: center;
