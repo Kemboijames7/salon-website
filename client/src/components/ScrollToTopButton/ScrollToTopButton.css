@@ -1,0 +1,44 @@
+/* .scroll_top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3498DB;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+} */
+
+/* .scroll_top.icon-visible {
+    opacity: 1;  
+}
+
+.scroll_top:not(.icon-visible) {
+    opacity: 0; 
+} */
+
+.scroll_top.icon-visible {
+    position: fixed;
+    right: 20px; 
+   bottom: 20px; 
+    padding: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 20px;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid #ffa500;
+    color: orange;
+    cursor: pointer;
+    text-align: center;
+    z-index: 99999;  
+    transition: all .1s ease-in-out;
+  }
+  
+  .scroll_top.icon-visible:hover {
+    background: rgb(241, 214, 163);
+    color: black;
+  }
+  

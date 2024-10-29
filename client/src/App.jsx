@@ -1,6 +1,6 @@
 import React from 'react';
 import {Outlet} from 'react-router-dom';
-import { useState } from 'react';
+import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton.jsx';
 
 
 function App() {
@@ -23,11 +23,9 @@ function App() {
     </main>
 
    
-      
+    <ScrollToTopButton />
       <footer>
-      <span className="scroll_top icon-visible" style="display: inline;">
-        <i className="ri-arrow-up-s-line"></i> 
-    </span>
+    
   <p>Contact: (555) 123-4567 | info@qwinnissalon.com
     © 2024 Qwinnis Hair Salon. All rights reserved</p>
     </footer>

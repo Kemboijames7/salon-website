@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDom from 'react-dom/client'
+import ReactDOM from 'react-dom/client'
 import {BrowserRouter  as Router, Route, Routes} from 'react-router-dom'
 import App from './App.jsx'
 import Home from './pages/home/Home.jsx'
@@ -7,11 +7,12 @@ import Staff from './pages/staff/Staff.jsx'
 import Services from './pages/service/Services.jsx'
 import Booking from './pages/booking/Booking.jsx'
 import Admin from './pages/Admin.jsx'
-import ScrollToTopButton from './pages/scroll/ScrollToTopButton';
+import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton.jsx';
 import './index.css'
 
-ReactDom.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
+     <ScrollToTopButton /> 
     <Routes>
     <Route path='/' element={<App/>}>
         <Route index element={<Home/>}/>
@@ -19,7 +20,7 @@ ReactDom.createRoot(document.getElementById('root')).render(
         <Route path='Services' element={<Services/>}/>
         <Route path='Booking' element={<Booking/>}/>
         <Route path='Admin' element={<Admin/>}/>
-        <Route path='scroll' element={<scroll/>}/>
+       
 
     </Route>
   </Routes>
