@@ -1,22 +1,4 @@
-/* .scroll_top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #3498DB;
-    color: white;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-} */
 
-/* .scroll_top.icon-visible {
-    opacity: 1;  
-}
-
-.scroll_top:not(.icon-visible) {
-    opacity: 0; 
-} */
 
 .scroll_top.icon-visible {
     position: fixed;
