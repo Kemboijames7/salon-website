@@ -1,8 +1,27 @@
-import React from 'react';
-import styles from './home.module.css'; // Importing CSS module
+
+import React, { useEffect, useState } from 'react';
+import styles from './home.module.css';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+    const [count, setCount] = useState(1);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCount(prevCount => {
+                if (prevCount < 12) {
+                    return prevCount + 1;
+                } else {
+                    clearInterval(interval);
+                    return prevCount;
+                }
+            });
+        }, 100); // Adjust duration as needed
+
+        return () => clearInterval(interval); // Cleanup on component unmount
+    }, []);
+
+
     return (
         <div className={styles['home-container']}>
             <header className={styles.hero}>
@@ -39,25 +58,20 @@ const Home = () => {
                 - Sarah J.
             </section>
 
-            <section>
-                <div class="text-align-center">
-                    <div class="header142_content">
-<h2 class="heading-style-h3">Celebrating</h2>
-
-                <div class="counter-text">
-                    <span counter-element="number" duration="3000" class="counter-text">12</span>
-               
-                <h2 class="heading-style-h3">Years </h2>
+            {/* Celebrating Years Section */}
+            <section className={styles['celebration']}>
+                <div className="header142_content">
+                <h2 className={styles['heading-style-h3']}>Celebrating</h2>
+            <div className={styles['counter-text']}>
+                <span className={styles['counter-number']}>{count}</span>
+                <h2 className={styles['heading-style-h3']}>Year{count > 1 ? 's' : ''}</h2>
+            </div>
+            <div className={styles['animation-text-wrap']}>
+                <h2 className={styles['heading-style-h3']}>with Qwinnis Hair Salon</h2>
+                    </div>
                 </div>
-                <div class="animation-text-wrap">
-                    <h2 class="heading-style-h3">with Dukes Barbers</h2>
-                    </div>
-                    </div>
-
-                  </div>
             </section>
 
-          
         </div>
     );
 };
