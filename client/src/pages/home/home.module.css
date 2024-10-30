@@ -151,6 +151,9 @@
   transition: all 1s ease-in-out;
 }
 
+.blowup {
+  animation: blowup 0.6s ease forwards; /* Animation duration and easing */
+}
 
 h2 {
   margin-top: 20px;

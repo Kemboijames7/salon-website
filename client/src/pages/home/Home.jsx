@@ -7,7 +7,7 @@ import { FaScissors } from "react-icons/fa6";
 import { PiHairDryerBold } from "react-icons/pi";
 import { GiComb } from "react-icons/gi";
 import { GiTowel } from "react-icons/gi";
-
+import { GiLipstick } from "react-icons/gi";
 
 const Home = () => {
     const [count, setCount] = useState(1);
@@ -83,10 +83,17 @@ const Home = () => {
             {showIcons && (
                 <div className={styles['icon-container']}>
                     <FaScissors className={`${styles.icon} ${styles.blowup}`} />
+                    <span className={`${styles.icon} ${styles.blowup}`}>💅🏻</span>
                     <PiHairDryerBold className={`${styles.icon} ${styles.blowup}`} />
+                    <span className={`${styles.icon} ${styles.blowup}`}>💆🏻‍♀️🧖🏻‍♀️✨🌿</span>
                     <FaRegSmile className={`${styles.icon} ${styles.blowup}`} />
+                    <span className={`${styles.icon} ${styles.blowup}`}>💄</span>
                     <GiComb className={`${styles.icon} ${styles.blowup}`} />
+                    <span className={`${styles.icon} ${styles.blowup}`}>🚿</span>
                     <GiTowel className={`${styles.icon} ${styles.blowup}`}/>
+                    <GiLipstick className={`${styles.icon} ${styles.blowup}`}/>
+                    <span className={`${styles.icon} ${styles.blowup}`}>💈</span>
+                   
                 </div>
             )}
 
