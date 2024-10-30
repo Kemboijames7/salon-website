@@ -137,6 +137,21 @@
   line-height: .5;
 }
 
+.icon-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.icon {
+  font-size: 2rem;  
+  margin: 0 10px; 
+  color: rgb(214, 200, 110);
+  transform: rotateY('80');
+  transition: all 1s ease-in-out;
+}
+
+
 h2 {
   margin-top: 20px;
   margin-bottom: 10px;

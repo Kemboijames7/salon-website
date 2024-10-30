@@ -2,9 +2,16 @@
 import React, { useEffect, useState } from 'react';
 import styles from './home.module.css';
 import { Link } from 'react-router-dom';
+import { FaRegSmile, FaBeer }  from 'react-icons/fa';
+import { FaScissors } from "react-icons/fa6";
+import { PiHairDryerBold } from "react-icons/pi";
+import { GiComb } from "react-icons/gi";
+import { GiTowel } from "react-icons/gi";
+
 
 const Home = () => {
     const [count, setCount] = useState(1);
+    const [showIcons, setShowIcons] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -13,6 +20,7 @@ const Home = () => {
                     return prevCount + 1;
                 } else {
                     clearInterval(interval);
+                    setShowIcons(true);
                     return prevCount;
                 }
             });
@@ -40,10 +48,10 @@ const Home = () => {
             <section className={styles['featured-services']}>
                 <h2>Our Services</h2>
                 <ul>
-                    <li>Expert Haircuts</li>
-                    <li>Coloring & Highlights</li>
-                    <li>Styling for Special Occasions</li>
-                    <li>Hair Treatments</li>
+                    <li>Expert Haircuts💇🏽‍♀️  💇🏻‍♂️</li>
+                    <li>Coloring & Highlights 🎨</li>
+                    <li>Styling for Special Occasions  🎉</li>
+                    <li>Hair Treatments 💆🏾‍♂️ 💆🏻‍♀️🧴✨</li>
                 </ul>
             </section>
 
@@ -71,6 +79,16 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {showIcons && (
+                <div className={styles['icon-container']}>
+                    <FaScissors className={`${styles.icon} ${styles.blowup}`} />
+                    <PiHairDryerBold className={`${styles.icon} ${styles.blowup}`} />
+                    <FaRegSmile className={`${styles.icon} ${styles.blowup}`} />
+                    <GiComb className={`${styles.icon} ${styles.blowup}`} />
+                    <GiTowel className={`${styles.icon} ${styles.blowup}`}/>
+                </div>
+            )}
 
         </div>
     );
