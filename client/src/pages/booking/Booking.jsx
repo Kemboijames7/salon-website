@@ -39,10 +39,10 @@ const handleSubmit = async(e) => {
     body:JSON.stringify({name,email,date,service, stylist})
 })
 
-   //Tell the customer the booking was successful and redirect them back home.
+   
    if (response.ok) {
     alert(`Booking for ${name} on ${date.toLocaleDateString()} was successful. We will send an email to ${email} with available times.`);
-    await sendAvailableTimes(email); // Call to send available times
+    await sendAvailableTimes(email);  
     navigate('/');
   } else {
     alert('Booking failed. Please try again.');

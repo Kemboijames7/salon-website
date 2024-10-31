@@ -37,28 +37,30 @@ const staffMembers = [
 ];
 
 const StaffMember = ({ member }) => (
-  <div className={styles['staff-member']}>
-      <img src={member.imageUrl} alt={member.name} className={styles['staff-photo']} />
-      <h3 className={styles['staff-name']}>{member.name}</h3>
-      <p className={styles['staff-role']}>{member.role}</p>
-      <p className={styles['staff-specialty']}>{member.specialty}</p>
-      <p className={styles['staff-bio']}>{member.bio}</p>
-  </div>
-);
-
-const StaffPage = () => (
-  <div className={styles['staff-container']}>
-      <h1 className={styles['staff-header']}>Meet Our Team</h1>
-      <p className={styles['staff-intro']}>
-          At Qwinnis Hair Salon, our team of skilled professionals is dedicated to helping you look and feel your best. 
-          Get to know the talented individuals who will be taking care of your hair needs.
-      </p>
-      <div className={styles['staff-grid']}>
-          {staffMembers.map(member => (
-              <StaffMember key={member.id} member={member} />
-          ))}
+    <div className={styles.staffMember}>
+      <img src={member.imageUrl} alt={`${member.name} profile`} className={styles.staffPhoto} />
+      <div className={styles.staffInfo}>
+        <h3 className={styles.staffName}>{member.name}</h3>
+        <p className={styles.staffRole}>{member.role}</p>
+        <p className={styles.staffSpecialty}><strong>Specialty:</strong> {member.specialty}</p>
+        <p className={styles.staffBio}>{member.bio}</p>
       </div>
-  </div>
-);
+    </div>
+  );
 
-export default StaffPage;
+  const StaffPage = () => (
+    <section className={styles.staffContainer}>
+      <h1 className={styles.staffHeader}>Meet Our Team</h1>
+      <p className={styles.staffIntro}>
+        At Qwinnis Hair Salon, our team of skilled professionals is dedicated to helping you look and feel your best. 
+        Get to know the talented individuals who will be taking care of your hair needs.
+      </p>
+      <div className={styles.staffGrid}>
+        {staffMembers.map(member => (
+          <StaffMember key={member.id} member={member} />
+        ))}
+      </div>
+    </section>
+  );
+  
+  export default StaffPage;

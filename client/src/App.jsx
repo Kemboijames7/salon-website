@@ -44,7 +44,7 @@ function App() {
                     <p>Address: 123 Main St, Torongo</p>
                 </div>
 
-                <div className="footer-column">
+                <div className="footer-column footer-col">
                     <h3>Social Media</h3>
                  
                    <li><a href="/about">About Us</a></li>
@@ -67,7 +67,8 @@ function App() {
                         <li><a href="https://www.facebook.com/qwinnissalon" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-fill"></i></a></li>
                         <li><a href="https://www.instagram.com/qwinnissalon" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line"></i></a></li>
                         <li><a href="https://www.youtube.com/qwinnissalon" target="_blank" rel="noopener noreferrer"><i class="ri-youtube-fill"></i></a></li>
-                        <li><a href="https://www.linkedin.com/qwinnissalon" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill"></i></a></li>
+                        <li><a href="https://www.twitter.com/qwinnissalon" target="_blank" rel="noopener noreferrer"><i class="ri-twitter-fill"></i></a></li>
+                        <li><a href="https://www.tiktok.com/qwinnissalon" target="_blank" rel="noopener noreferrer"><i class="ri-tiktok-fill"></i></a></li>
                        
                     
                 </div>
