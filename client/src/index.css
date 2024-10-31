@@ -36,7 +36,7 @@ background-color: #f7f4ef;
 position: sticky;
 bottom: 0;
 text-align: center;
-margin-top: 20px;
+margin-top: 3px;
 padding: 5px;
 border-radius: 5px;
 color: rgb(66, 56, 56);
@@ -108,3 +108,29 @@ ul {
   font-size: 1rem; 
 }
 
+.dir-click {
+  display: flex;
+  justify-content: start;
+  gap: 30px;
+
+}
+.go-next{
+  right: 20px;
+  bottom: 0;
+  padding: 4px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  transition: all 0.2s ease-in-out;
+  border: 2px solid #ffa500;
+  color: orange;
+  cursor: pointer;
+  text-align: center;
+  z-index: 99999;
+}
+
+.go-next:hover {
+  background: rgb(241, 214, 163);
+  color: black;
+}

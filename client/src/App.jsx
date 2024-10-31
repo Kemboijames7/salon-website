@@ -1,10 +1,20 @@
 import React from 'react';
-import {Outlet} from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton.jsx';
-
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 
 function App() {
- 
+    const navigate = useNavigate(); 
+
+    // Navigation handlers
+    const handleBack = () => {
+      navigate(-1); 
+    };
+  
+    const handleForward = () => {
+      navigate(1);  
+    };
 
   return (
    <div>
@@ -63,9 +73,17 @@ function App() {
                 </div>
 
             </div>
+            <div className='dir-click'>
+            <h6 className="go-next" onClick={handleBack}><IoIosArrowBack />Prev</h6>
+            <h6 className="go-next" onClick={handleForward}><IoIosArrowForward />Next</h6>
+            </div>
+            
+
             <div className="footer-bottom">
+                
                 <p>© 2024 Qwinnis Hair Salon. All rights reserved.</p>
             </div>
+            
         </footer>
        
      

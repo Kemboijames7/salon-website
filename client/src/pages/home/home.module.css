@@ -57,6 +57,7 @@
   .featured-services ul {
     list-style-type: none;
     padding: 0;
+    text-align: center;
   }
   
   .featured-services li {
@@ -156,8 +157,8 @@
 }
 
 h2 {
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   font-size: 32px;
   font-weight: 600;
   line-height: 36px;
