@@ -1,16 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { AuthContext } from './AuthContext'; // Import the AuthContext
 
 const Admin = () => {
+    const { isAuthenticated } = useContext(AuthContext); // Get authentication status
     const [bookings, setBookings] = useState([]);
-    
+
     useEffect(() => {
         const fetchBookings = async () => {
             const response = await fetch('http://localhost:5000/api/bookings');
             const data = await response.json();
             setBookings(data);
         };
-        fetchBookings();
-    }, []);
+
+        if (isAuthenticated) {
+            fetchBookings(); // Fetch bookings only if authenticated
+        }
+    }, [isAuthenticated]);
+
+    // If not authenticated, you can return a message or redirect
+    if (!isAuthenticated) {
+        return <h2>You do not have access to this page.</h2>;
+    }
 
     return (
         <div>
