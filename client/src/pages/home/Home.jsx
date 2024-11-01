@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom';
 import { FaRegSmile, FaBeer }  from 'react-icons/fa';
 import { FaScissors } from "react-icons/fa6";
 import { PiHairDryerBold } from "react-icons/pi";
-import { GiComb } from "react-icons/gi";
-import { GiTowel } from "react-icons/gi";
-import { GiLipstick } from "react-icons/gi";
+import { GiComb, GiTowel, GiLipstick } from "react-icons/gi";
+
 
 const Home = () => {
     const [count, setCount] = useState(1);
     const [showIcons, setShowIcons] = useState(false);
+    const [animateIcons, setAnimateIcons] = useState(false);
+
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -29,6 +30,56 @@ const Home = () => {
         return () => clearInterval(interval); // Cleanup on component unmount
     }, []);
 
+
+    useEffect(() => {
+        if (showIcons) {
+            // Delay to start animation after icons are displayed
+            const animationDelay = setTimeout(() => {
+                setAnimateIcons(true);
+            }, 500); // Adjust delay as needed
+
+            return () => clearTimeout(animationDelay);
+        }
+    }, [showIcons]);
+
+    useEffect(() => {
+        if (!animateIcons) return;
+
+        let animationFrame;
+        const handleMouseMove = (e) => {
+            if (animationFrame) return;
+
+            animationFrame = requestAnimationFrame(() => {
+                const icons = document.querySelectorAll('.icon');
+                icons.forEach((icon) => {
+                    const iconRect = icon.getBoundingClientRect();
+                    const iconCenterX = iconRect.left + iconRect.width / 2;
+                    const iconCenterY = iconRect.top + iconRect.height / 2;
+
+                    const deltaX = e.clientX - iconCenterX;
+                    const deltaY = e.clientY - iconCenterY;
+
+                    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                    const angle = Math.atan2(deltaY, deltaX);
+
+                    const moveDistance = Math.min(20, distance / 10);
+                    const translateX = moveDistance * Math.cos(angle);
+                    const translateY = moveDistance * Math.sin(angle);
+
+                    icon.style.transform = `translate(${translateX}px, ${translateY}px)`;
+                });
+
+                animationFrame = null;
+            });
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+            if (animationFrame) cancelAnimationFrame(animationFrame);
+        };
+    }, [animateIcons]);
 
     return (
         <div className={styles['home-container']}>
@@ -48,9 +99,9 @@ const Home = () => {
             <section className={styles['featured-services']}>
                 <h2>Our Services</h2>
                 <ul>
-                    <li>Expert Haircuts💇🏽‍♀️  💇🏻‍♂️</li>
+                    <li>Expert Haircuts💇🏽‍♀️ 💇🏻‍♂️</li>
                     <li>Coloring & Highlights 🎨</li>
-                    <li>Styling for Special Occasions  🎉</li>
+                    <li>Styling for Special Occasions 🎉</li>
                     <li>Hair Treatments 💆🏾‍♂️ 💆🏻‍♀️🧴✨</li>
                 </ul>
             </section>
@@ -66,37 +117,34 @@ const Home = () => {
                 - Sarah J.
             </section>
 
-            {/* Celebrating Years Section */}
             <section className={styles['celebration']}>
                 <div className="header142_content">
-                <h2 className={styles['heading-style-h3']}>Celebrating</h2>
-            <div className={styles['counter-text']}>
-                <span className={styles['counter-number']}>{count}</span>
-                <h2 className={styles['heading-style-h3']}>Year{count > 1 ? 's' : ''}</h2>
-            </div>
-            <div className={styles['animation-text-wrap']}>
-                <h2 className={styles['heading-style-h3']}>with Qwinnis Hair Salon</h2>
+                    <h2 className={styles['heading-style-h3']}>Celebrating</h2>
+                    <div className={styles['counter-text']}>
+                        <span className={styles['counter-number']}>{count}</span>
+                        <h2 className={styles['heading-style-h3']}>Year{count > 1 ? 's' : ''}</h2>
+                    </div>
+                    <div className={styles['animation-text-wrap']}>
+                        <h2 className={styles['heading-style-h3']}>with Qwinnis Hair Salon</h2>
                     </div>
                 </div>
             </section>
 
             {showIcons && (
                 <div className={styles['icon-container']}>
-                    <FaScissors className={`${styles.icon} ${styles.blowup}`} />
-                    <span className={`${styles.icon} ${styles.blowup}`}>💅🏻</span>
-                    <PiHairDryerBold className={`${styles.icon} ${styles.blowup}`} />
-                    <span className={`${styles.icon} ${styles.blowup}`}>💆🏻‍♀️🧖🏻‍♀️✨🌿</span>
-                    <FaRegSmile className={`${styles.icon} ${styles.blowup}`} />
-                    <span className={`${styles.icon} ${styles.blowup}`}>💄</span>
-                    <GiComb className={`${styles.icon} ${styles.blowup}`} />
-                    <span className={`${styles.icon} ${styles.blowup}`}>🚿</span>
-                    <GiTowel className={`${styles.icon} ${styles.blowup}`}/>
-                    <GiLipstick className={`${styles.icon} ${styles.blowup}`}/>
-                    <span className={`${styles.icon} ${styles.blowup}`}>💈</span>
-                   
+                    <FaScissors className={`${styles.icon} ${animateIcons ? styles.blowup : ''}`} />
+                    <span className={`${styles.icon} ${animateIcons ? styles.blowup : ''}`}>💅🏻</span>
+                    <PiHairDryerBold className={`${styles.icon} ${animateIcons ? styles.blowup : ''}`} />
+                    <span className={`${styles.icon} ${animateIcons ? styles.blowup : ''}`}>💆🏻‍♀️🧖🏻‍♀️✨🌿</span>
+                    <FaRegSmile className={`${styles.icon} ${animateIcons ? styles.blowup : ''}`} />
+                    <span className={`${styles.icon} ${animateIcons ? styles.blowup : ''}`}>💄</span>
+                    <GiComb className={`${styles.icon} ${animateIcons ? styles.blowup : ''}`} />
+                    <span className={`${styles.icon} ${animateIcons ? styles.blowup : ''}`}>🚿</span>
+                    <GiLipstick className={`${styles.icon} ${animateIcons ? styles.blowup : ''}`} />
+                    <span className={`${styles.icon} ${animateIcons ? styles.blowup : ''}`}>💈</span>
+                    <GiTowel className={`${styles.icon} ${animateIcons ? styles.blowup : ''}`} />
                 </div>
             )}
-
         </div>
     );
 };
