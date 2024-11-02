@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton.jsx';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-
+import { AuthProvider } from './AuthContext';
 
 function App() {
     const navigate = useNavigate(); 
@@ -17,19 +17,29 @@ function App() {
     };
 
   return (
-   <div>
-    <header>
-     <h1>The Qwinnis Hair Salon</h1> 
+    <AuthProvider>
+            <Router> 
+        <div>
+          <header>
+          <h1>The Qwinnis Hair Salon</h1> 
 
-     <nav> <a href="/">Home</a> |
-     <a href="/Staff">Staff</a>|
-     <a href="/Services">Services</a>|
-     <a href="/Booking">Booking</a>|
-     <a href="/Admin">Admin</a>
-     </nav> 
-     </header>
+          <nav> <a href="/">Home</a> |
+          <a href="/Staff">Staff</a>|
+          <a href="/Services">Services</a>|
+          <a href="/Booking">Booking</a>|
+          <Link to="/Admin">Admin</Link>
+          </nav> 
+          </header>
+
     <main>
-      <Outlet/>
+      <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/Staff" element={<Staff />} />
+                            <Route path="/Services" element={<Services />} />
+                            <Route path="/Booking" element={<Booking />} />
+                            {/* Private route for Admin */}
+                            <Route path="/Admin" element={<PrivateRoute component={Admin} />} />
+                        </Routes>
     </main>
 
    
@@ -86,10 +96,19 @@ function App() {
             </div>
             
         </footer>
-       
-     
    </div>
+   </Router>
+   </AuthProvider>
   )
 }
 
+// Private Route Component
+const PrivateRoute = ({ component: Component }) => {
+  const { isAuthenticated } = React.useContext(AuthContext);
+  return isAuthenticated ? (
+      <Component />
+  ) : (
+      <Navigate to="/" /> // Redirect to home if not authenticated
+  );
+};
 export default App
