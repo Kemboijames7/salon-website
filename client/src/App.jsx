@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton.jsx';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { AuthProvider } from './AuthContext';
+import { AuthProvider } from './AuthContext/AuthContext.js';
 
 function App() {
     const navigate = useNavigate(); 
@@ -17,8 +17,7 @@ function App() {
     };
 
   return (
-    <AuthProvider>
-            <Router> 
+ 
         <div>
           <header>
           <h1>The Qwinnis Hair Salon</h1> 
@@ -97,8 +96,7 @@ function App() {
             
         </footer>
    </div>
-   </Router>
-   </AuthProvider>
+
   )
 }
 
