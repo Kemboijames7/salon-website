@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton.jsx';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { AuthProvider } from './AuthContext/AuthContext.js';
+import AuthProvider, { useAuth } from './AuthContext/AuthContext.jsx';
 
 function App() {
     const navigate = useNavigate(); 
@@ -17,7 +17,7 @@ function App() {
     };
 
   return (
- 
+    <AuthProvider>
         <div>
           <header>
           <h1>The Qwinnis Hair Salon</h1> 
@@ -96,7 +96,7 @@ function App() {
             
         </footer>
    </div>
-
+</AuthProvider>
   )
 }
 
@@ -108,5 +108,5 @@ const PrivateRoute = ({ component: Component }) => {
   ) : (
       <Navigate to="/" /> // Redirect to home if not authenticated
   );
-};
+clearImmediate};
 export default App
