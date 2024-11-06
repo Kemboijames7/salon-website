@@ -1,8 +1,8 @@
 import React from 'react';
-import { Outlet, useNavigate, Routes, Route, Navigate, Link } from 'react-router-dom';
+import { Outlet, useNavigate,Navigate, Link } from 'react-router-dom';
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton.jsx';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import AuthProvider, { useAuth, AuthContext } from './AuthContext/AuthContext.jsx';
+import AuthProvider, { useAuth } from "../AuthContext/AuthContext.jsx";
 
 // Import other page components
 import Home from './pages/Home';
@@ -24,23 +24,24 @@ function App() {
                 <header>
                     <h1>The Qwinnis Hair Salon</h1>
                     <nav>
-                        <Link to="/">Home</Link> |
-                        <Link to="/Staff">Staff</Link> |
-                        <Link to="/Services">Services</Link> |
-                        <Link to="/Booking">Booking</Link> |
-                        <Link to="/Admin">Admin</Link>
-                    </nav>
+                        <a href="/">Home</a> |
+                        <a href="/Staff">Staff</a> |
+                        <a href="/Services">Services</a> |
+                        <a href="/Booking">Booking</a> |
+                        {isAuthenticated && <Link to="/Admin">Admin</Link>} {/* Show only if authenticated */}
+                    </nav> 
                 </header>
 
                 <main>
-                    <Routes>
+                <Outlet />
+                    {/* <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/Staff" element={<Staff />} />
                         <Route path="/Services" element={<Services />} />
                         <Route path="/Booking" element={<Booking />} />
-                        {/* Private route for Admin */}
+                  
                         <Route path="/Admin" element={<PrivateRoute component={Admin} />} />
-                    </Routes>
+                    </Routes> */}
                 </main>
 
                 <ScrollToTopButton />
