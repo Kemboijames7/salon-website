@@ -16,7 +16,7 @@ const AuthProvider = ({ children }) => {
     );
 };
 
-const useAuth = () => {
+export const useAuth = () => {
     return useContext(AuthContext);
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet, useNavigate,Navigate, Link } from 'react-router-dom';
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton.jsx';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import AuthProvider, { useAuth } from "../AuthContext/AuthContext.jsx";
+import AuthProvider, { useAuth } from "./AuthContext/AuthContext.jsx";
 
 // Import other page components
 import Home from './pages/Home';
