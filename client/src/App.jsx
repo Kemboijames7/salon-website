@@ -2,14 +2,9 @@ import React from 'react';
 import { Outlet, useNavigate,Navigate, Link } from 'react-router-dom';
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton.jsx';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import AuthProvider, { useAuth } from "./AuthContext/AuthContext.jsx";
+// import AuthProvider, { useAuth } from "./AuthContext/AuthContext.jsx";
 
-// Import other page components
-import Home from './pages/Home';
-import Staff from './pages/Staff';
-import Services from './pages/Services';
-import Booking from './pages/Booking';
-import Admin from './pages/Admin';
+
 
 function App() {
     const navigate = useNavigate(); 
@@ -19,7 +14,7 @@ function App() {
     const handleForward = () => navigate(1);
 
     return (
-        <AuthProvider>
+    
             <div>
                 <header>
                     <h1>The Qwinnis Hair Salon</h1>
@@ -28,20 +23,13 @@ function App() {
                         <a href="/Staff">Staff</a> |
                         <a href="/Services">Services</a> |
                         <a href="/Booking">Booking</a> |
-                        {isAuthenticated && <Link to="/Admin">Admin</Link>} {/* Show only if authenticated */}
+                        
                     </nav> 
                 </header>
 
                 <main>
                 <Outlet />
-                    {/* <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/Staff" element={<Staff />} />
-                        <Route path="/Services" element={<Services />} />
-                        <Route path="/Booking" element={<Booking />} />
-                  
-                        <Route path="/Admin" element={<PrivateRoute component={Admin} />} />
-                    </Routes> */}
+                    
                 </main>
 
                 <ScrollToTopButton />
@@ -94,7 +82,7 @@ function App() {
                     </div>
                 </footer>
             </div>
-        </AuthProvider>
+      
     );
 }
 

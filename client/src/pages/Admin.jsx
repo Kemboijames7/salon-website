@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import  { AuthProvider, useAuth } from "../AuthContext/AuthContext.jsx";
+// import  { AuthProvider, useAuth } from "../AuthContext/AuthContext.jsx";
 
 const Admin = () => {
     const { isAuthenticated } = useContext(AuthContext); // Get authentication status
