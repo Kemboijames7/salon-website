@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 // import  { AuthProvider, useAuth } from "../AuthContext/AuthContext.jsx";
 
 const Admin = () => {
-    const { isAuthenticated } = useContext(AuthContext); // Get authentication status
+    // const { isAuthenticated } = useContext(AuthContext); // Get authentication status
     const [bookings, setBookings] = useState([]);
 
     useEffect(() => {
@@ -12,16 +12,12 @@ const Admin = () => {
             setBookings(data);
         };
 
-        if (isAuthenticated) {
+      
             fetchBookings(); // Fetch bookings only if authenticated
-        }
-    }, [isAuthenticated]);
+        
+    }, []);
 
-    // If not authenticated, you can return a message or redirect
-    if (!isAuthenticated) {
-        return <h2>You do not have access to this page.</h2>;
-    }
-
+ 
     return (
         <div>
             <h1>Admin Dashboard</h1>

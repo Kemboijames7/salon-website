@@ -15,7 +15,7 @@ function App() {
 
     return (
     
-            <div>
+           <div>
                 <header>
                     <h1>The Qwinnis Hair Salon</h1>
                     <nav>
@@ -23,6 +23,7 @@ function App() {
                         <a href="/Staff">Staff</a> |
                         <a href="/Services">Services</a> |
                         <a href="/Booking">Booking</a> |
+                        <a href="/Admin">Admin</a> |
                         
                     </nav> 
                 </header>
@@ -87,13 +88,13 @@ function App() {
 }
 
 // Private Route Component
-const PrivateRoute = ({ component: Component }) => {
-    const { isAuthenticated } = useAuth();
-    return isAuthenticated ? (
-        <Component />
-    ) : (
-        <Navigate to="/" /> // Redirect to home if not authenticated
-    );
-};
+// const PrivateRoute = ({ component: Component }) => {
+//     const { isAuthenticated } = useAuth();
+//     return isAuthenticated ? (
+//         <Component />
+//     ) : (
+//         <Navigate to="/" />  
+//     );
+// };
 
 export default App;
