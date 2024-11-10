@@ -20,7 +20,8 @@ const Admin = () => {
  
     return (
         <div>
-            <h1>Admin Dashboard</h1>
+                 <h2>Admin Panel</h2>
+                 <p>Welcome, Admin! Here you can oversee the website.</p>
             <ul>
                 {bookings.map((booking) => (
                     <li key={booking._id}>

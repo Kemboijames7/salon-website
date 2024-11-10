@@ -65,6 +65,7 @@ nav a:hover{
 
 .footer__socials a {
   padding: 6px 8px;
+  gap: 10px;
   font-size: 1.25rem;
   color: #64748b;
   background-color: #ffffff;
@@ -76,6 +77,7 @@ nav a:hover{
 .footer__socials a:hover {
   color: #ffffff;
   background-color: #483408;
+  
 }
 
 .footer-column h3 {

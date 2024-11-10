@@ -14,7 +14,7 @@ function App() {
     const handleForward = () => navigate(1);
 
     return (
-    
+        <AuthProvider>
            <div>
                 <header>
                     <h1>The Qwinnis Hair Salon</h1>
@@ -23,7 +23,7 @@ function App() {
                         <a href="/Staff">Staff</a> |
                         <a href="/Services">Services</a> |
                         <a href="/Booking">Booking</a> |
-                        <a href="/Admin">Admin</a> |
+                        {isAdmin && <a href="/Admin">Admin</a>} {/* Only show Admin link if isAdmin is true */}
                         
                     </nav> 
                 </header>
@@ -83,7 +83,7 @@ function App() {
                     </div>
                 </footer>
             </div>
-      
+        </AuthProvider>
     );
 }
 
