@@ -1,6 +1,6 @@
 // Admin.jsx
 import React, { useEffect, useState } from 'react';
-import { useAuth } from './AuthContext.jsx'; // Only import useAuth for consuming the context
+import { useAuth } from '../AuthContext.jsx'; // Only import useAuth for consuming the context
 
 const Admin = () => {
     const { isAdmin } = useAuth(); // Use the context to access isAdmin
