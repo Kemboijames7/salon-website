@@ -2,12 +2,13 @@ import React from 'react';
 import { Outlet, useNavigate,Navigate, Link } from 'react-router-dom';
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton.jsx';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-// import AuthProvider, { useAuth } from "./AuthContext/AuthContext.jsx";
-
-
+import { AuthProvider } from './AuthContext'
+import { useAuth } from './AuthContext';
 
 function App() {
     const navigate = useNavigate(); 
+
+    const { isAdmin, logout } = useAuth();
 
     // Navigation handlers
     const handleBack = () => navigate(-1);
@@ -24,6 +25,7 @@ function App() {
                         <a href="/Services">Services</a> |
                         <a href="/Booking">Booking</a> |
                         {isAdmin && <a href="/Admin">Admin</a>} {/* Only show Admin link if isAdmin is true */}
+                        {isAdmin && <button onClick={logout}>Logout</button>} {/* Add a logout button */}
                         
                     </nav> 
                 </header>
