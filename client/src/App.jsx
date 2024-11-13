@@ -22,8 +22,8 @@ function App() {
                     <a href="/Staff">Staff</a> |
                     <a href="/Services">Services</a> |
                     <a href="/Booking">Booking</a> |
-                    {isAdmin && <a href="/Admin">Admin</a>} {/* Only show Admin link if isAdmin is true */}
-                    {isAdmin && <button onClick={logout}>Logout</button>} {/* Logout button if admin */}
+                    {isAdmin && <a href="/Admin">Admin https://www.google.com/imgres?imgurl=https%3A%2F%2Fpic.onlinewebfonts.com%2Fsvg%2Fimg_325788.svg&tbnid=QbpV9Qyac9JqBM&vet=10CBIQxiAoBWoXChMIoOe0vpnaiQMVAAAAAB0AAAAAEAY..i&imgrefurl=https%3A%2F%2Fwww.onlinewebfonts.com%2Ficon%2F325788&docid=v1GWjTloOfcoQM&w=800&h=800&itg=1&q=admin%20icon%20svg&ved=0CBIQxiAoBWoXChMIoOe0vpnaiQMVAAAAAB0AAAAAEAY</a>} {/* Only show Admin link if isAdmin is true */}
+                    {isAdmin && <button onClick={logout}>Log out </button>} {/* Logout button if admin */}
                 </nav> 
             </header>
 
