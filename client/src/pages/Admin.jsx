@@ -5,6 +5,8 @@ import { useAuth } from '../AuthContext.jsx'; // Only import useAuth for consumi
 const Admin = () => {
     const { isAdmin } = useAuth(); // Use the context to access isAdmin
 
+    console.log('isAdmin:', isAdmin);  // Log the isAdmin value
+
     const [bookings, setBookings] = useState([]);
 
     useEffect(() => {

@@ -22,8 +22,11 @@ function App() {
                     <a href="/Staff">Staff</a> |
                     <a href="/Services">Services</a> |
                     <a href="/Booking">Booking</a> |
-                    {isAdmin && <a href="/Admin">Admin <i class="ri-admin-line"></i></a>} {/* Only show Admin link if isAdmin is true */}
-                    {isAdmin && <button onClick={logout}>Log out </button>} {/* Logout button if admin */}
+                    {isAdmin && <a href="/Admin">Admin <i className="ri-admin-line"></i></a>}
+                    {isAdmin && <button onClick={logout}>Log out</button>}
+                    {!isAdmin && (
+                        <button onClick={() => login('admin')}>Login as Admin</button>
+                    )} {/* Add a login button */}
                 </nav> 
             </header>
 
