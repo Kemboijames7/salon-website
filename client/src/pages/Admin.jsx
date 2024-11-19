@@ -27,6 +27,7 @@ const Admin = () => {
             {isAdmin ? (
                 <>
                     <p>Welcome, Admin! Here you can oversee the website.</p>
+                    <h2>Booked appointments</h2>
                     <ul>
                         {bookings.map((booking) => (
                             <li key={booking._id}>
