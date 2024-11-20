@@ -1,6 +1,7 @@
 // Admin.jsx
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../AuthContext.jsx'; // Only import useAuth for consuming the context
+import { FaBold } from 'react-icons/fa';
 
 const Admin = () => {
     const { isAdmin } = useAuth(); // Use the context to access isAdmin
@@ -29,9 +30,13 @@ const Admin = () => {
                     <p>Welcome, Admin! Here you can oversee the website.</p>
                     <h2>Booked appointments</h2>
                     <ul>
+
                         {bookings.map((booking) => (
                             <li key={booking._id}>
-                                {booking.name} - {booking.email} - {new Date(booking.date).toDateString()} - {booking.service} - {booking.stylist}
+                                
+                             <emphasis>
+                             {booking.name} - {booking.email} - {new Date(booking.date).toDateString()} - {booking.service} - {booking.stylist} 
+                             </emphasis>  
                             </li>
                         ))}
                     </ul>
