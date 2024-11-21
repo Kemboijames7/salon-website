@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '../AuthContext.jsx'; // Only import useAuth for consuming the context
 import { FaBold } from 'react-icons/fa';
 
+
 const Admin = () => {
     const { isAdmin } = useAuth(); // Use the context to access isAdmin
 
@@ -31,14 +32,15 @@ const Admin = () => {
                     <h2>Booked appointments</h2>
                     <ul>
 
-                        {bookings.map((booking) => (
-                            <li key={booking._id}>
-                                
-                             <emphasis>
-                             {booking.name} - {booking.email} - {new Date(booking.date).toDateString()} - {booking.service} - {booking.stylist} 
-                             </emphasis>  
-                            </li>
-                        ))}
+                    {bookings.length > 0 ? (
+                    bookings.map((booking) => (
+                        <li key={booking._id}>
+                            <strong>{booking.name}</strong> - {booking.email} - {new Date(booking.date).toDateString()} - {booking.service} - {booking.stylist}
+                        </li>
+                    ))
+                ) : (
+                    <p>No bookings found.</p>
+                )}
                     </ul>
                 </>
             ) : (
