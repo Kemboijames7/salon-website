@@ -30,6 +30,7 @@ const Admin = () => {
                 <>
                     <p>Welcome, Admin! Here you can oversee the website.</p>
                     <h2>Booked appointments</h2>
+                    {loading ? <p>Loading bookings...</p> : <BookingList bookings={bookings} />}
                     <ul>
 
                     {bookings.length > 0 ? (
