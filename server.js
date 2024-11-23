@@ -9,7 +9,7 @@ app.use(express.json());
 
 
 mongoose.connect(
-   `mongodb+srv://kemich:${process.env.MONGODB_PASSWORD}@cluster0.5u4cmkt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+   `mongodb+srv://kemich:Viva7lasvegan@cluster0.5u4cmkt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
 ).then(() => {
     console.log('Connected to MongoDB');
   }).catch((error) => {

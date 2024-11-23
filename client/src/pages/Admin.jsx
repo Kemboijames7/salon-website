@@ -18,7 +18,9 @@ const Admin = () => {
             setBookings(data);
         };
 
-        if (isAdmin) {
+        if (!isAdmin) {
+            console.warn('Unauthorized access attempt to Admin panel.');
+            return; if (isAdmin) {
             fetchBookings(); // Fetch bookings only if authenticated as admin
         }
     }, [isAdmin]);
