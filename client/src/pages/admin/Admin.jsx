@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useAuth } from '../AuthContext.jsx';
+import { useAuth } from '../../AuthContext';
 
 const Admin = () => {
     const { isAdmin } = useAuth(); // Use the context to access isAdmin

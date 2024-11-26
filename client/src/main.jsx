@@ -6,7 +6,7 @@ import Home from './pages/home/Home.jsx'
 import Staff from './pages/staff/Staff.jsx'
 import Services from './pages/service/Services.jsx'
 import Booking from './pages/booking/Booking.jsx'
-import Admin from './pages/Admin.jsx'
+import Admin from './pages/admin/Admin.jsx'
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton.jsx';
 import { AuthProvider } from './AuthContext'
 import PrivateRoute from './PrivateRoute';
