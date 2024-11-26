@@ -7,7 +7,7 @@ import { useAuth } from './AuthContext'; // Only import useAuth for context acce
 
 function App() {
     const navigate = useNavigate();
-    const { isAdmin, logout } = useAuth(); // Access isAdmin and logout directly from context
+    const { isAdmin, login,  logout } = useAuth(); // Access isAdmin and logout directly from context
 
     // Navigation handlers
     const handleBack = () => navigate(-1);

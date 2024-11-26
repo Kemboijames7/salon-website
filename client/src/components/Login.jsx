@@ -26,7 +26,7 @@ const Login = () => {
     <form onSubmit={handleLogin}>
       <h2>Admin Login</h2>
       <input
-        type="text"
+        type= "text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         placeholder="Username"
