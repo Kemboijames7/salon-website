@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styles from './admin.module.css';
 import { useAuth } from '../../AuthContext';
 
 const Admin = () => {
@@ -37,12 +38,12 @@ const Admin = () => {
             <h2>Admin Panel</h2>
             {isAdmin ? (
                 <>
-                    <p>Welcome, Admin! Here you can oversee the website.</p>
-                    <h2>Booked Appointments</h2>
+                    <p className={styles['head-text']}>Welcome, Admin! Here you can oversee the website.</p>
+                    <h3>Booked Appointments</h3>
                     {loading ? (
                         <p>Loading bookings...</p>
                     ) : bookings.length > 0 ? (
-                        <ul>
+                        <ul className={styles['appointments']}>
                             {bookings.map((booking) => (
                                 <li key={booking._id}>
                                     <strong>{booking.name}</strong> - {booking.email} -{' '}
