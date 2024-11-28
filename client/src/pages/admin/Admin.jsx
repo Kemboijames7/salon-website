@@ -3,7 +3,7 @@ import { useAuth } from '../../AuthContext';
 
 const Admin = () => {
     const { isAdmin } = useAuth(); // Use the context to access isAdmin
-    console.log('isAdmin:', isAdmin); // Log the isAdmin value
+   
 
     const [bookings, setBookings] = useState([]);
     const [loading, setLoading] = useState(true); // State to handle loading
