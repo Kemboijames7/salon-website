@@ -3,14 +3,15 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 
-const ProtectedRoute = ({ children }) => {
+const PrivateRoute = ({ children }) => {
   const { isAdmin } = useAuth();
 
   if (!isAdmin) {
-    return <Navigate to="/" replace />; // Redirect to homepage if not admin
+    return <Navigate to="/Login" />;
   }
 
+  // If the user is an admin, render the requested component (element)
   return children;
 };
 
-export default ProtectedRoute;
+export default PrivateRoute;

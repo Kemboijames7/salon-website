@@ -3,28 +3,48 @@ import React, { useState } from 'react';
 import { useAuth } from '../AuthContext';
 
 const Login = () => {
+  console.log('Login component rendered');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const { login } = useAuth();
 
   const handleLogin = async (e) => {
+    console.log('Before preventDefault'); // Add this to debug
     e.preventDefault();
+    console.log('After preventDefault'); 
+    setError(''); // Clear previous errors
+     // Log the credentials
+  console.log('Login Attempt:', { username, password });
+    try {
+      console.log('Sending request to /api/login with', { username, password });
     const response = await fetch('/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password }),
     });
+
+    if (!response.ok) {
+      throw new Error('Invalid credentials or server error.');
+    }
+
     const data = await response.json();
-    if (data.success && data.user.role === 'admin') {
+    console.log('Login API Response:', data);
+
+    if (data.success && data.user && data.user.role === 'admin') {
       login(data.user); // Set admin role in context
     } else {
-      alert('Login failed: Not an admin');
+     setError('Login failed: You are not an admin.');
     }
-  };
+  } catch (err) {
+    setError(err.message || 'Something went wrong. Please try again.');
+  }
+};
 
   return (
     <form onSubmit={handleLogin}>
       <h2>Admin Login</h2>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
       <input
         type= "text"
         value={username}

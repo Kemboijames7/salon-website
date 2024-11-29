@@ -11,12 +11,15 @@ export const AuthProvider = ({ children }) => {
   const [isAdmin, setIsAdmin] = useState(localStorage.getItem('isAdmin') === 'true');
   const navigate = useNavigate();
 
-  const login = (role) => {
-    if (role === 'admin') {
+  const login = (user) => {
+    console.log('Login Attempt:', user); // Debug the user object
+    if (user.role === 'admin') {
       setIsAdmin(true);
       localStorage.setItem('isAdmin', 'true');
+      console.log('Admin login successful. isAdmin:', isAdmin);
       navigate('/Admin');
     } else {
+      console.log('Unauthorized login attempt:', user.role);
       alert("Unauthorized Access");
     }
   };
@@ -30,6 +33,7 @@ export const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider value={{ isAdmin, login, logout }}>
       {children}
+     
     </AuthContext.Provider>
   );
 };
