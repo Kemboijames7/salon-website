@@ -25,8 +25,19 @@ function App() {
                     {isAdmin && <a href="/Admin">Admin <i className="ri-admin-line"></i></a>}
                     {isAdmin && <button onClick={logout}>Log out</button>}
                     {!isAdmin && (
-                        <button onClick={() => login('admin')}>Login as Admin</button>
-                    )} {/* Add a login button */}
+  <button onClick={() => {
+    console.log('Attempting login...');
+    if (typeof login === 'function') {
+        
+      login('admin');
+    } else {
+      console.error('Login is not a function');
+    }
+  }}>
+    Login as Admin
+  </button>
+)}
+ {/* Add a login button */}
                 </nav> 
             </header>
 

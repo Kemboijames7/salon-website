@@ -8,6 +8,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { login } = useAuth();
+  console.log('Login function:', login);
 
   const handleLogin = async (e) => {
     console.log('Before preventDefault'); // Add this to debug

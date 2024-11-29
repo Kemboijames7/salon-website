@@ -1,9 +1,6 @@
 // src/AuthContext.js
 import React, { createContext, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Login from './components/Login.jsx';
-
-
 
 const AuthContext = createContext();
 
@@ -12,15 +9,19 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const login = (user) => {
-    console.log('Login Attempt:', user); // Debug the user object
-    if (user.role === 'admin') {
+    console.log('Login called with role:', user); // Debug the user object
+    if (!user) {
+      console.error('User is undefined! Check the caller of login.');
+      return;
+    }
+    if (user === 'admin') {
       setIsAdmin(true);
       localStorage.setItem('isAdmin', 'true');
       console.log('Admin login successful. isAdmin:', isAdmin);
       navigate('/Admin');
     } else {
-      console.log('Unauthorized login attempt:', user.role);
-      alert("Unauthorized Access");
+      console.log('Unauthorized login attempt:', user);
+      alert('Unauthorized Access');
     }
   };
 
@@ -31,7 +32,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isAdmin, login, logout }}>
+    <AuthContext.Provider value={{ login, logout, isAdmin }}>
       {children}
      
     </AuthContext.Provider>
