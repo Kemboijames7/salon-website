@@ -128,3 +128,18 @@ ul {
   background: rgb(241, 214, 163);
   color: black;
 }
+
+input {
+  max-width: 500px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 2px solid #483408;
+
+}
+
+.btn {
+padding: 10px;
+background-color:#C4D7FF;
+color: black;
+}

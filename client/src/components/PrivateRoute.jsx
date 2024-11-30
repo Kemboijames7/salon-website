@@ -7,7 +7,7 @@ const PrivateRoute = ({ children }) => {
   const { isAdmin } = useAuth();
 
   if (!isAdmin) {
-    return <Navigate to="/Login" />;
+    return <Navigate to="/Login" replace />;
   }
 
   // If the user is an admin, render the requested component (element)

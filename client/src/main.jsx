@@ -9,9 +9,9 @@ import Booking from './pages/booking/Booking.jsx'
 import Admin from './pages/admin/Admin.jsx'
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton.jsx';
 import { AuthProvider } from './AuthContext'
-import PrivateRoute from './components/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute.jsx';
 import './index.css';
-import Login from './components/Login';
+import Login from './components/Login.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='Services' element={<Services/>}/>
         <Route path='Booking' element={<Booking/>}/>
         <Route path="Admin" element={<PrivateRoute><Admin /></PrivateRoute>} />
-        <Route path="/Login" element={<Login />} />
+        <Route path="Login" element={<Login />} />
 
     </Route>
   </Routes>

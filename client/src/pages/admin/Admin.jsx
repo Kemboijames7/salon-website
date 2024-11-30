@@ -14,10 +14,24 @@ const Admin = () => {
         const fetchBookings = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await fetch('http://localhost:5000/api/bookings');
+                if (!token) {
+                    throw new Error('No token found in localStorage');
+                }
+                const response = await fetch('http://localhost:5000/api/bookings', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}` // Include the token
+                    }
+                });
+        
                 if (!response.ok) {
+                    if (response.status === 401) {
+                        throw new Error('Unauthorized access. Please log in again.');
+                    }
                     throw new Error('Failed to fetch bookings');
                 }
+        
                 const data = await response.json();
                 setBookings(data);
             } catch (error) {

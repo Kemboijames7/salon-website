@@ -7,12 +7,10 @@ import { useAuth } from './AuthContext'; // Only import useAuth for context acce
 
 function App() {
     const navigate = useNavigate();
-    const { isAdmin, login,  logout } = useAuth(); // Access isAdmin and logout directly from context
-
     // Navigation handlers
     const handleBack = () => navigate(-1);
     const handleForward = () => navigate(1);
-
+    const { isAdmin, login,  logout } = useAuth(); // Access isAdmin and logout directly from context
     return (
         <div>
             <header>
@@ -28,16 +26,16 @@ function App() {
   <button onClick={() => {
     console.log('Attempting login...');
     if (typeof login === 'function') {
-        
+        console.log('Login is a function, calling login...'); 
       login('admin');
     } else {
       console.error('Login is not a function');
     }
   }}>
-    Login as Admin
+   Login as Admin
   </button>
 )}
- {/* Add a login button */}
+{!isAdmin && <a href="/Login">Go to Login</a>}
                 </nav> 
             </header>
 
