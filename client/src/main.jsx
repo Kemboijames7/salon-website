@@ -47,3 +47,36 @@ window.addEventListener('scroll', () => {
       scrollTopButton.style.display = 'none';   
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Select all images with a 'data-src' attribute
+  const lazyImages = document.querySelectorAll('img[data-src]');
+  
+  // Create an Intersection Observer
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      // If the image is intersecting (visible in viewport)
+      if (entry.isIntersecting) {
+        const lazyImage = entry.target;
+        
+        // Replace 'data-src' with 'src'
+        lazyImage.src = lazyImage.dataset.src;
+        
+        // Remove the placeholder class if you're using one
+        lazyImage.classList.remove('lazy-load');
+        
+        // Stop observing this image
+        observer.unobserve(lazyImage);
+      }
+    });
+  }, {
+    // Optional configuration
+    rootMargin: '50px 0px', // Start loading 50px before entering viewport
+    threshold: 0.01 // Trigger when even 1% of the image is visible
+  });
+  
+  // Start observing each lazy image
+  lazyImages.forEach(img => {
+    imageObserver.observe(img);
+  });
+});
