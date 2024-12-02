@@ -4,6 +4,7 @@
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "firebase-functions": "^6.1.1",
+    "lucide-react": "^0.462.0",
     "mongoose": "^8.8.3"
   }
 }
