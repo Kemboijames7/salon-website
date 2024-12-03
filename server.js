@@ -39,33 +39,32 @@ const User = mongoose.model('User', UserSchema);
 app.post('/api/login', async (req, res) => {
   const { username, password } = req.body;
   try {
-    const user = await User.findOne({ username });
+      const user = await User.findOne({ username });
 
-    if (!user) {
-      return res.status(404).json({ success: false, message: 'User not found' });
-    }
+      if (!user) {
+          return res.status(404).json({ success: false, message: 'User not found' });
+      }
 
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(401).json({ success: false, message: 'Invalid credentials' });
-    }
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+          return res.status(401).json({ success: false, message: 'Invalid credentials' });
+      }
 
-    if (user.role !== 'admin') {
-      return res.status(403).json({ success: false, message: 'Access restricted to admins only' });
-    }
+      if (user.role !== 'admin') {
+          return res.status(403).json({ success: false, message: 'Access restricted to admins only' });
+      }
 
-    // Generate a JWT for the admin
-    const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, {
-      expiresIn: '1h',
-    });
+      // Generate a JWT for the admin
+      const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, {
+          expiresIn: '1h',
+      });
 
-    res.json({ success: true, token, user: { username: user.username, role: user.role } });
+      res.json({ success: true, token, user: { username: user.username, role: user.role } });
   } catch (error) {
-    console.error('Error during login:', error);
-    res.status(500).json({ message: 'Internal server error' });
+      console.error('Error during login:', error);
+      res.status(500).json({ message: 'Internal server error', error: error.message });
   }
 });
-
 
 mongoose.connect(
   process.env.MONGODB_PASSWORD).then(() => {
@@ -136,32 +135,3 @@ app.listen(5000, () => {
     console.log('Server is running on port 5000');
 })
 
-app.post('/api/login', async (req, res) => {
-  const { username, password } = req.body;
-  try {
-      const user = await User.findOne({ username });
-
-      if (!user) {
-          return res.status(404).json({ success: false, message: 'User not found' });
-      }
-
-      const isMatch = await bcrypt.compare(password, user.password);
-      if (!isMatch) {
-          return res.status(401).json({ success: false, message: 'Invalid credentials' });
-      }
-
-      if (user.role !== 'admin') {
-          return res.status(403).json({ success: false, message: 'Access restricted to admins only' });
-      }
-
-      // Generate a JWT for the admin
-      const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, {
-          expiresIn: '1h',
-      });
-
-      res.json({ success: true, token, user: { username: user.username, role: user.role } });
-  } catch (error) {
-      console.error('Error during login:', error);
-      res.status(500).json({ message: 'Internal server error', error: error.message });
-  }
-});

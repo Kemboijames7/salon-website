@@ -9,21 +9,23 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const login = (user) => {
-    console.log('Login called with role:', user); // Debug the user object
-    if (!user) {
-      console.error('User is undefined! Check the caller of login.');
-      return;
+    console.log('Login called with user:', user); // Debugging
+    if (!user || !user.role) {
+        console.error('User is undefined or does not have a role! Check the caller of login.');
+        return;
     }
-    if (user === 'admin') {
-      setIsAdmin(true);
-      localStorage.setItem('isAdmin', 'true');
-      console.log('Admin login successful. isAdmin:', isAdmin);
-      navigate('/Admin');
+
+    if (user.role === 'admin') {
+        setIsAdmin(true);
+        localStorage.setItem('isAdmin', 'true');
+        localStorage.setItem('token', user.token); // Store token as well
+        console.log('Admin login successful. isAdmin:', true);
+        navigate('/Admin');
     } else {
-      console.log('Unauthorized login attempt:', user);
-      alert('Unauthorized Access');
+        console.log('Unauthorized login attempt:', user);
+        alert('Unauthorized Access');
     }
-  };
+};
 
   const logout = () => {
     setIsAdmin(false);

@@ -17,9 +17,10 @@ const Login = () => {
     setError(''); // Clear previous errors
      // Log the credentials
   console.log('Login Attempt:', { username, password });
+
     try {
       console.log('Sending request to /api/login with', { username, password });
-    const response = await fetch('/api/login', {
+    const response = await fetch('http://localhost:5000/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password }),
@@ -32,7 +33,7 @@ const Login = () => {
     const data = await response.json();
     console.log('Login API Response:', data);
 
-    if (data.success && data.user && data.user.role === 'admin') {
+    if (data.success && data.user) {
       login(data.user); // Set admin role in context
     } else {
      setError('Login failed: You are not an admin.');
