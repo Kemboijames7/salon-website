@@ -34,6 +34,7 @@ const Login = () => {
     console.log('Login API Response:', data);
 
     if (data.success && data.user) {
+      console.log('Full response:', data);
       login(data.user); // Set admin role in context
     } else {
      setError('Login failed: You are not an admin.');

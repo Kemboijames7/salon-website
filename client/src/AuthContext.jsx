@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = (user) => {
     console.log('Login called with user:', user); // Debugging
-    if (!user || !user.role) {
+    if (!user ) {
         console.error('User is undefined or does not have a role! Check the caller of login.');
         return;
     }

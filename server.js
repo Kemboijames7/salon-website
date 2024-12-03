@@ -12,12 +12,6 @@ const bcrypt = require('bcrypt');
 app.use(cors());
 app.use(express.json());
 
-// Example usage
-const encodedDomain = punycode.encode('münich.com');
-console.log(encodedDomain); // Output will be xn--mnich-kva.com
-
-const decodedDomain = punycode.decode(encodedDomain);
-console.log(decodedDomain); // Output will be münich.com
 
 
 app.get("/api/hello", (req, res) => {
@@ -59,7 +53,14 @@ app.post('/api/login', async (req, res) => {
           expiresIn: '1h',
       });
 
-      res.json({ success: true, token, user: { username: user.username, role: user.role } });
+      res.json({
+        success: true,
+        token: generatedToken, // Include token if using JWT
+        user: {
+            username: user.username,
+            role: user.role,
+        },
+    });
   } catch (error) {
       console.error('Error during login:', error);
       res.status(500).json({ message: 'Internal server error', error: error.message });
