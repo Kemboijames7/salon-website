@@ -80,3 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
     imageObserver.observe(img);
   });
 });
+
+function adjustFontSize() {
+  const html = document.documentElement;
+  const width = window.innerWidth;
+
+  // Example: Adjust base font size dynamically
+  html.style.fontSize = width > 768 ? '16px' : '14px';
+}
+
+window.addEventListener('resize', adjustFontSize);
+document.addEventListener('DOMContentLoaded', adjustFontSize);
