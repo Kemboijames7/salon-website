@@ -1,4 +1,4 @@
-### **Salon Website **  
+### **Salon Website**   
 
 #### **Overview**  
 The **Salon Website** is an online booking platform for salon services, allowing clients to schedule appointments, explore services, and connect with stylists. It ensures a seamless experience with an intuitive design, service listings, and secure payment options.  
