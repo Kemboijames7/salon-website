@@ -4,6 +4,7 @@ import { Outlet, useNavigate, Link } from 'react-router-dom';
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton.jsx';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useAuth } from './AuthContext'; // Only import useAuth for context access
+import Modal from './components/Modal.jsx'; // Import Modal component
 
 function App() {
     const navigate = useNavigate();
@@ -44,6 +45,9 @@ function App() {
             </main>
 
             <ScrollToTopButton />
+
+   {/* Global Modal Component */}
+   {isModalOpen && <Modal content={modalContent} onClose={() => setModalOpen(false)} />}
 
             <footer className="footer">
                 <div className="footer-content">
