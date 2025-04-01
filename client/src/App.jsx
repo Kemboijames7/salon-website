@@ -4,7 +4,7 @@ import { Outlet, useNavigate, Link } from 'react-router-dom';
 import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton.jsx';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useAuth } from './AuthContext'; // Only import useAuth for context access
-import Modal from './components/Modal.jsx'; // Import Modal component
+import Modal from './components/modal.jsx'; // Import Modal component
 
 function App() {
     const navigate = useNavigate();
@@ -12,6 +12,17 @@ function App() {
     const handleBack = () => navigate(-1);
     const handleForward = () => navigate(1);
     const { isAdmin, login,  logout } = useAuth(); // Access isAdmin and logout directly from context
+
+        // ✅ Define modal state
+        const [isModalOpen, setModalOpen] = useState(false);
+        const [modalContent, setModalContent] = useState('');
+    
+        // ✅ Function to open modal
+        const openModal = (content) => {
+            setModalContent(content);
+            setModalOpen(true);
+        };
+
     return (
         <div>
             <header>
