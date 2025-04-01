@@ -13,7 +13,7 @@ The **Salon Website** is an online booking platform for salon services, allowing
 - **Newsletter Subscription** – Updates on offers and new services.  
 
 #### **Technology Stack**  
-- **Frontend:** HTML, CSS, JavaScript  
+- **Frontend:** HTML, CSS, React.js + React Router   
 - **Backend:** Node.js, Express.js  
 - **Database:** MongoDB (Atlas)  
 - **API Communication:** Fetch API for dynamic updates  
